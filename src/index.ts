@@ -1,8 +1,9 @@
 import express from "express";
 import { initConfig } from "./config";
 
+
 const app = express();
-const port = process.env.PORT || 3000 as number;
+const port = process.env.PORT || 9000 as number;
 
 const startServer = async() : Promise<void> =>{
   try{
