@@ -276,3 +276,144 @@
 {"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 15:52:46"}
 {"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 15:52:46"}
 {"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 15:52:46"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:04:08"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:04:08"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:04:08"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:07"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:07"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:07"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:22"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:22"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:22"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:24"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:24"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:24"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:30"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:30"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:30"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:34"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:34"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:34"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:42"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:42"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:42"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:44"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:44"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:44"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:50"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:50"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:50"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:53"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:53"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:53"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:07:57"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:07:57"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:07:57"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:16:55"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:16:55"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:16:55"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:48:03"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:48:03"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:48:03"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:48:28"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:48:28"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:48:28"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:48:32"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:48:32"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:48:32"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:48:35"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:48:35"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:48:35"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:49:13"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:49:13"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:49:13"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:50:25"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:50:25"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:50:25"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:50:28"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:50:28"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:50:28"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:50:33"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:50:33"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:50:33"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:50:36"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:50:36"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:50:36"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:50:38"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:50:38"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:50:38"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:54:51"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:54:51"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:54:51"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:02"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:02"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:02"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:05"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:05"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:05"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:14"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:14"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:14"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:21"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:21"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:21"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:23"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:23"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:23"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:25"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:25"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:25"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:55:38"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:55:38"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:55:38"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:56:57"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:56:57"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:56:57"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:57:57"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:57:57"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:57:57"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:57:59"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:57:59"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:57:59"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:58:05"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:58:05"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:58:05"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:58:09"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:58:09"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:58:09"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:58:12"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:58:12"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:58:12"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 16:58:25"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 16:58:25"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 16:58:25"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:00:46"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:00:46"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:00:46"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:00:48"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:00:48"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:00:48"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:14:05"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:14:05"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:14:05"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:14:07"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:14:07"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:14:07"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:14:14"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:14:14"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:14:14"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:15:15"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:15:15"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:15:15"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:15:23"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:15:23"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:15:23"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:15:36"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:15:36"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:15:36"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:15:39"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:15:39"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:15:39"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-05 17:24:20"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-05 17:24:20"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-05 17:24:20"}
