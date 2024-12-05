@@ -1,5 +1,6 @@
 import { connect, NatsConnection, StringCodec} from "nats";
 import { Logger } from "../utils/logger";
+import { processEvent } from "../services/events/eventprocessor";
 
 let natsConnection : NatsConnection | null = null;
 
@@ -35,17 +36,22 @@ export const getNatsConnection = (): NatsConnection => {
   return natsConnection;
 };
 
-export const subscribeToTopic = async (topic : string, callback: (message:any) => void) => {
-  if(!natsConnection) {
-    Logger.error("NATS 연결이 초기화 되지 않았습니다.");
-    throw new Error("NATS 연결이 초기화 되지 않았습니다.");
-  }
-
+export const subscribeToAllEvents = async () => {
+  if (!natsConnection) throw new Error('NATS connection not established');
+  
   const sc = StringCodec();
-  const sub = natsConnection.subscribe(topic);
+  const subscription = natsConnection.subscribe('link.event.>'); // 와일드카드 구독
 
-  for await (const m of sub){
-    const message = sc.decode(m.data);
-    callback(JSON.parse(message));
+  console.log('NATS 이벤트 구독 성공: link.event.>');
+  
+  for await (const msg of subscription) {
+    const topic = msg.subject; // 메시지의 토픽
+    const payload = JSON.parse(sc.decode(msg.data)); // 메시지 디코딩
+
+    try {
+      await processEvent(topic, payload); // 이벤트 처리
+    } catch (error) {
+      Logger.error(`NATS 이벤트 처리 실패: ${topic}`, error);
+    }
   }
-}
+};
