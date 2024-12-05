@@ -1,4 +1,4 @@
-import { connect, NatsConnection} from "nats";
+import { connect, NatsConnection, StringCodec} from "nats";
 import { Logger } from "../utils/logger";
 
 let natsConnection : NatsConnection | null = null;
@@ -34,3 +34,18 @@ export const getNatsConnection = (): NatsConnection => {
   }
   return natsConnection;
 };
+
+export const subscribeToTopic = async (topic : string, callback: (message:any) => void) => {
+  if(!natsConnection) {
+    Logger.error("NATS 연결이 초기화 되지 않았습니다.");
+    throw new Error("NATS 연결이 초기화 되지 않았습니다.");
+  }
+
+  const sc = StringCodec();
+  const sub = natsConnection.subscribe(topic);
+
+  for await (const m of sub){
+    const message = sc.decode(m.data);
+    callback(JSON.parse(message));
+  }
+}
