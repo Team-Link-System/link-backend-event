@@ -1,0 +1,29 @@
+import { initConfig, shutdown } from './config';
+import { startApp } from './app';
+import { Logger } from './utils/logger';
+const startServer = async () => {
+  try {
+    await initConfig();
+    await startApp();
+
+    // Graceful shutdown 처리
+    process.on('SIGTERM', async () => {
+      Logger.info('SIGTERM signal received.');
+      await shutdown();
+      process.exit(0);
+    });
+
+    process.on('SIGINT', async () => {
+      Logger.info('SIGINT signal received.');
+      await shutdown();
+      process.exit(0);
+    });
+
+  } catch (error) {
+    Logger.error('Server startup failed:', error);
+    await shutdown();
+    process.exit(1);
+  }
+};
+
+startServer();
