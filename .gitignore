@@ -3,4 +3,4 @@
 /coverage
 /tsconfig.json
 /logs
-*.log
+/*.log
