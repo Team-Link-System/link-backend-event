@@ -594,3 +594,52 @@
 {"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 10:36:31"}
 {"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 10:36:31"}
 {"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 10:36:31"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:01:01"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:01:01"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:01:01"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:01:01"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:01:01"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:01:03"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:01:03"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:01:03"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:01:03"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:01:03"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:01:07"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:01:07"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:01:07"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:01:07"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:01:07"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:01:10"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:01:10"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:01:10"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:01:10"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:01:10"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:14:57"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:14:57"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:14:57"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:14:57"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:14:57"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:15:04"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:15:04"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:15:04"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:15:04"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:15:04"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:15:07"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:15:07"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:15:07"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:15:07"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:15:07"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:15:12"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:15:12"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:15:12"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:15:12"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:15:12"}
+{"level":"info","message":"MongoDB 연결 성공","timestamp":"2024-12-06 11:15:16"}
+{"level":"info","message":"NATS 연결 성공","timestamp":"2024-12-06 11:15:16"}
+{"level":"info","message":"Event subscriber started and listening for messages...","timestamp":"2024-12-06 11:15:16"}
+{"level":"info","message":"Starting event subscription for link.event.>","timestamp":"2024-12-06 11:15:16"}
+{"delivered":0,"level":"info","message":"Subscription created","pending":0,"subject":"link.event.>","timestamp":"2024-12-06 11:15:16"}
+{"hasData":true,"level":"info","message":"Raw message received","size":117,"subject":"link.event.user.signin","timestamp":"2024-12-06 11:17:46"}
+{"decodedData":"{\"eventId\":\"test\",\"payload\":{\"email\":\"test@test.com\",\"name\":\"이현종\",\"userId\":2},\"topic\":\"link.event.user.signin\"}","level":"info","message":"이벤트 디코딩 완료","timestamp":"2024-12-06 11:17:46"}
+{"level":"info","message":"이벤트 수신","payload":{"eventId":"test","payload":{"email":"test@test.com","name":"이현종","userId":2},"topic":"link.event.user.signin"},"timestamp":"2024-12-06 11:17:46","topic":"link.event.user.signin"}
+{"level":"info","message":"이벤트 처리 성공: link.event.user.signin","timestamp":"2024-12-06 11:17:46"}
