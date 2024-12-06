@@ -1,6 +1,6 @@
 import { handleUserLogin } from "./user.handler";
 export const handlers: Record<string, (data: any) => Promise<void>> = {
-  "link.event.user.login" : handleUserLogin,
+  "link.event.user.signin" : handleUserLogin,
   // "link.event.user.signup" : handleUserSignup,
   // "link.event.user.logout" : handleUserLogout,
   // "link.event.user.invite.request" : handleUserInviteRequest, //초대
