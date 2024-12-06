@@ -5,13 +5,12 @@ const chatSchema = new mongoose.Schema({
   sender_id : { type: Number, required: true},
   sender_name : { type: String, required: true},
   sender_email : { type: String, required: true},
-  sender_image : { type: String, required: false},
   content : { type: String, required: true},
   created_at : { type: Date, default: Date.now},
-  unread_by : [{ type: Number}],
-  unread_count : { type: Number, default: 0},
-}, {timestamps : true});
+  updated_at : { type: Date, default: null},
+  deleted_at : { type: Date, default: null},
+});
 
 
-export const ChatMessage = mongoose.model('ChatMessage', chatSchema);
+export const ChatMessage = mongoose.model('Message', chatSchema);
 export type ChatDocument = mongoose.InferSchemaType<typeof chatSchema>;

@@ -9,9 +9,6 @@ export const saveChatMessage = async (chatMessage: chatType.ChatMessagePayload) 
     sender_name : chatMessage.sender_name,
     sender_email : chatMessage.sender_email,
     content : chatMessage.content,
-    unread_by : chatMessage.unread_by,
-    unread_count : chatMessage.unread_count,
-    created_at : new Date(chatMessage.created_at),
   }
   await ChatMessage.create(chatMessageData);
 }

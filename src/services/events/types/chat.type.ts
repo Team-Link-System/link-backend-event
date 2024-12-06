@@ -3,10 +3,7 @@ export interface ChatMessagePayload {
     sender_id : number;
     sender_name : string;
     sender_email : string;
-    sender_image : string;
     content : string;
-    unread_by : number[];
-    unread_count : number;
     created_at : string;
 }
 
