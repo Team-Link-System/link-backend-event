@@ -40,18 +40,60 @@ export const subscribeToAllEvents = async () => {
   if (!natsConnection) throw new Error('NATS connection not established');
   
   const sc = StringCodec();
-  const subscription = natsConnection.subscribe('link.event.>'); // 와일드카드 구독
-
-  console.log('NATS 이벤트 구독 성공: link.event.>');
+  Logger.info('Starting event subscription for link.event.>');
   
-  for await (const msg of subscription) {
-    const topic = msg.subject; // 메시지의 토픽
-    const payload = JSON.parse(sc.decode(msg.data)); // 메시지 디코딩
+  const subscription = natsConnection.subscribe('link.event.>');
+  Logger.info('Subscription created', { 
+    subject: subscription.getSubject(),
+    delivered: subscription.getProcessed(),
+    pending: subscription.getPending()
+  });
+  
+  // 구독이 활성화되었는지 확인
+  if (subscription.getProcessed() === undefined) {
+    Logger.warn('Subscription might not be active');
+  }
 
-    try {
-      await processEvent(topic, payload); // 이벤트 처리
-    } catch (error) {
-      Logger.error(`NATS 이벤트 처리 실패: ${topic}`, error);
+  try {
+    for await (const msg of subscription) {
+      Logger.info('Raw message received', { 
+        subject: msg.subject,
+        hasData: !!msg.data,
+        size: msg.data?.length
+      });
+
+      try {
+        const decodedData = sc.decode(msg.data);
+        Logger.info('이벤트 디코딩 완료', { decodedData });
+        
+        const payload = JSON.parse(decodedData);
+        Logger.info('이벤트 수신', { 
+          topic: msg.subject, 
+          payload 
+        });
+
+        await processEvent(msg.subject, payload);
+        
+      } catch (error) {
+        Logger.error('이벤트 처리 실패', { 
+          error,
+          subject: msg.subject
+        });
+      }
     }
+  } catch (error) {
+    Logger.error('구독 중 에러가 발생했습니다.', { error });
+    setTimeout(() => subscribeToAllEvents(), 5000);
+  }
+};
+
+
+// 구독 시작 시 에러 처리 추가
+export const startSubscription = async () => {
+  try {
+    await subscribeToAllEvents();
+  } catch (error) {
+    Logger.error('구독에 실패했습니다.', { error });
+    setTimeout(() => startSubscription(), 5000);
   }
 };

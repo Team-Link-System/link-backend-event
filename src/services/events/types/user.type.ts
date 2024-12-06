@@ -3,6 +3,8 @@ export interface UserLoginEvent {
   eventId : string;
   payload: {
     userId : number;
+    username?: string;
+    email?: string;
     ipAddress?: string;
     device?: string;
     sessionId?: string;
