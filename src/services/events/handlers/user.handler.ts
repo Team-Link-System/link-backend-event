@@ -1,5 +1,12 @@
 import { Logger } from "../../../utils/logger";
-export const handleUserLogin = async (data: any) => {
-  // 사용자 로그인 로그 로직 저장
-  //TODO repository에 audit에 로그 저장   
+import * as auditRepository from "../../../repositories/audit.repository";
+import * as userType from "../types/user.type";
+
+export const handleUserSignIn = async (data: userType.UserSignInAudit) => {
+  try {
+    await  auditRepository.saveUserSignInAudit(data);
+    Logger.info('사용자 로그인 로그 저장 성공', { payload : data });
+  } catch(err) {
+    Logger.error('사용자 로그인 로그 저장 실패', { err, payload : data });
+  }
 }
