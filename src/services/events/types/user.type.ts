@@ -5,12 +5,12 @@ export interface Event {
 }
 
 export interface UserSignInEvent {
-    userId : number;
+    user_id : number;
     username?: string;
     email?: string;
-    ipAddress?: string;
+    ip_address?: string;
     device?: string;
-    sessionId?: string;
+    session_id?: string;
     timestamp : string; //TODO format은 yyyy-MM-dd HH:mm:ss 로  kst로 저장
 }
 

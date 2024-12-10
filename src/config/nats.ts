@@ -69,9 +69,8 @@ export const subscribeToAllEvents = async () => {
         const payload = JSON.parse(decodedData);
         Logger.info('이벤트 수신', { 
           topic: msg.subject, 
-          payload 
+          data : payload
         });
-
         await processEvent(msg.subject, payload);
         
       } catch (error) {
