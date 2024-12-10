@@ -5,6 +5,7 @@ export interface NotificationEvent {
 }
 
 export interface UserInviteRequestPayload {
+  doc_id : string;
   sender_id : number;
   receiver_id : number;
   title : string;
@@ -26,7 +27,9 @@ export interface UserInviteRequestEvent extends NotificationEvent {
 }
 
 export interface UserInviteResponsePayload {
-  _id? : string;
+  doc_id : string;
+  target_doc_id : string;
+  target_id : string;
   sender_id : number;
   receiver_id : number;
   title : string;
@@ -46,3 +49,11 @@ export interface UserInviteResponseEvent extends NotificationEvent {
   topic: string;
   payload: UserInviteResponsePayload;
 }
+
+export interface NotificationReadEvent extends NotificationEvent {
+  topic: string;
+  payload: {
+    doc_id : string;
+  }
+}
+
