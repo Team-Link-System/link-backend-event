@@ -8,7 +8,7 @@ export interface UserInviteRequestPayload {
   sender_id : number;
   receiver_id : number;
   title : string;
-  status : string;
+  status?: string;
   content : string;
   alarm_type : string;
   is_read? : boolean;
@@ -23,4 +23,26 @@ export interface UserInviteRequestPayload {
 export interface UserInviteRequestEvent extends NotificationEvent {
   topic: string;
   payload: UserInviteRequestPayload;
+}
+
+export interface UserInviteResponsePayload {
+  _id? : string;
+  sender_id : number;
+  receiver_id : number;
+  title : string;
+  status : string;
+  content : string;
+  alarm_type : string;
+  is_read? : boolean;
+  invite_type? : string;
+  company_id? : number;
+  company_name? : string;
+  department_id? : number;
+  department_name? : string;
+  timestamp? : string;
+}
+
+export interface UserInviteResponseEvent extends NotificationEvent {
+  topic: string;
+  payload: UserInviteResponsePayload;
 }
