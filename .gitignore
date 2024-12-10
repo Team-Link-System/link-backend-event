@@ -2,3 +2,5 @@
 /dist
 /coverage
 /tsconfig.json
+/logs
+/*.log
