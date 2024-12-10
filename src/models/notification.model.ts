@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const notificationSchema = new mongoose.Schema({
+  doc_id : { type: String, required: true}, //TODO uuid로 변경
   topic : { type: String, required: true, index: true},
   sender_id : { type: Number, required: true},
   receiver_id : { type: Number, required: true},
