@@ -49,3 +49,11 @@ export interface UserInviteResponseEvent extends NotificationEvent {
   topic: string;
   payload: UserInviteResponsePayload;
 }
+
+export interface NotificationReadEvent extends NotificationEvent {
+  topic: string;
+  payload: {
+    doc_id : string;
+  }
+}
+

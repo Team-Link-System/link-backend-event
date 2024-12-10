@@ -58,3 +58,13 @@ export const saveUserInviteResponse = async (data: notificationType.UserInviteRe
     Logger.error('[Repository]사용자 초대 응답 로그 저장 실패', { err, data });
   }
 }
+
+
+export const updateNotificationRead = async (data: notificationType.NotificationReadEvent) => {
+  try {
+    await Notification.updateOne({doc_id: data.payload.doc_id}, {is_read : true});
+    Logger.info('[Repository]알림 읽음 처리 성공', { data });
+  } catch(err) {
+    Logger.error('[Repository]알림 읽음 처리 실패', { err, data });
+  }
+}

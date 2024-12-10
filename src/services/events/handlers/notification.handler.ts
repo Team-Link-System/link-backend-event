@@ -70,3 +70,12 @@ export const handleUserInviteResponse = async (data: notificationType.UserInvite
     Logger.error('사용자 초대 응답 로그 저장 실패', { err, data });
   }
 }
+
+export const handleNotificationRead = async (data: notificationType.NotificationReadEvent) => {
+  try {
+    await notificationRepository.updateNotificationRead(data);
+    Logger.info('알림 읽음 처리 성공', { data });
+  } catch(err) {
+    Logger.error('알림 읽음 처리 실패', { err, data });
+  }
+}
