@@ -8,6 +8,7 @@ export const handlers: Record<string, (data: any) => Promise<void>> = {
   // "link.event.user.signout" : handleUserSignOut,
 
   //TODO 알림 관련
+  "link.event.notification.mention" : notificationHandler.handleUserMention, //언급
   "link.event.notification.invite.request" : notificationHandler.handleUserInviteRequest, //초대
   "link.event.notification.invite.response" : notificationHandler.handleUserInviteResponse, //초대에 대한 응답 
   "link.event.notification.read" : notificationHandler.handleNotificationRead, //알림 읽음 처리

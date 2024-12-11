@@ -7,6 +7,5 @@ export const processEvent = async(topic: string, data: any) => {
   Logger.warn(`이벤트 처리 실패: ${topic}`);
   return;
 } 
-  Logger.info(`이벤트 처리 성공: ${topic}`);
   await handler(data);
 }
