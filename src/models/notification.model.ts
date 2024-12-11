@@ -17,6 +17,10 @@ const notificationSchema = new mongoose.Schema({
   department_id : { type: Number, required: false},
   department_name : { type: String, required: false},
   timestamp : { type: Date, default: Date.now},
-}, {timestamps : true}); 
+  created_at : { type: Date, default: Date.now},
+  updated_at : { type: Date, default: null},
+  deleted_at : { type: Date, default: null},
+}); 
 
 export const Notification = mongoose.model("Notification", notificationSchema);
+export type NotificationDocument = mongoose.InferSchemaType<typeof notificationSchema>;
