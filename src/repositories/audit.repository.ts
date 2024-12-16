@@ -8,3 +8,22 @@ export const saveUserSignInAudit = async (data: any) => {
   }
   await Audit.create(auditData);
 }
+
+//TODO 출퇴근 시간 기록
+export const saveUserAttendanceAudit = async (data: any) => {
+  const auditData = {
+    topic : data.topic,
+    action : "checkIn ", //출근 
+    payload : data.payload,
+  }
+  await Audit.create(auditData);
+}
+
+export const saveUserLeaveAudit = async (data: any) => {
+  const auditData = {
+    topic : data.topic,
+    action : "leave", //퇴근
+    payload : data.payload,
+  }
+  await Audit.create(auditData);
+}
