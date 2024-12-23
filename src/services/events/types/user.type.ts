@@ -6,8 +6,9 @@ export interface Event {
 
 export interface UserSignInEvent {
     user_id : number;
-    username?: string;
+    name?: string;
     email?: string;
+    company_id?: number;
     ip_address?: string;
     device?: string;
     session_id?: string;
