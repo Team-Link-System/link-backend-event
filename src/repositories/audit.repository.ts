@@ -23,7 +23,17 @@ export const saveUserAttendanceAudit = async (data: any) => {
 export const saveUserLeaveAudit = async (data: any) => {
   const auditData = {
     topic : data.topic,
-    action : "CheckOut", //퇴근
+    action : "checkOut", //퇴근
+    payload : data.payload,
+  }
+  await Audit.create(auditData);
+}
+
+//TODO 신고 관련
+export const saveReportAudit = async (data: any) => {
+  const auditData = {
+    topic : data.topic,
+    action : "report",
     payload : data.payload,
   }
   await Audit.create(auditData);

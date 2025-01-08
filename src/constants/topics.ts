@@ -9,9 +9,13 @@ export const TOPICS = {
     MESSAGE : "chat.message",
     LEAVE : ">.chat.leave",
     JOIN : ">.chat.join"
+  },
+  REPORT : {
+    CREATE : ">.report.create"
   }
 } as const;
 
 export type UserTopics = typeof TOPICS.USER;
 export type ChatTopics = typeof TOPICS.CHAT;
-export type AllTopics = UserTopics & ChatTopics;
+export type ReportTopics = typeof TOPICS.REPORT;
+export type AllTopics = UserTopics & ChatTopics & ReportTopics;

@@ -1,6 +1,7 @@
 import { handleUserSignIn } from "./user.handler";
 import { handleChatMessage } from "./chat.handler";
 import * as notificationHandler from "./notification.handler";
+import { handleReportCreate } from "./report.handler";
 
 export const handlers: Record<string, (data: any) => Promise<void>> = {
   "link.event.user.signin" : handleUserSignIn,
@@ -20,5 +21,8 @@ export const handlers: Record<string, (data: any) => Promise<void>> = {
 
   //TODO 채팅 관련
   "link.event.chat.message" : handleChatMessage,
+
+  //TODO 신고 관련
+  "link.event.report.create" : handleReportCreate,
 
 }
