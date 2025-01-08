@@ -64,8 +64,6 @@ export const subscribeToAllEvents = async () => {
 
       try {
         const decodedData = sc.decode(msg.data);
-        Logger.info('이벤트 디코딩 완료', { decodedData });
-        
         const payload = JSON.parse(decodedData);
         Logger.info('이벤트 수신', { 
           topic: msg.subject, 
@@ -94,5 +92,18 @@ export const startSubscription = async () => {
   } catch (error) {
     Logger.error('구독에 실패했습니다.', { error });
     setTimeout(() => startSubscription(), 5000);
+  }
+};
+
+//TODO nats pub
+export const publishEvent = async (topic: string, data: any) => {
+  if (!natsConnection) throw new Error('NATS connection not established');
+  const sc = StringCodec();
+  const encodedData = sc.encode(JSON.stringify(data));
+  try {
+    await natsConnection.publish(topic, encodedData);
+    Logger.info('NATS pub 성공', { topic, data });
+  } catch(err) {
+    Logger.error('NATS pub 실패', { err, topic, data });
   }
 };

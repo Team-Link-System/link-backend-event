@@ -1,6 +1,7 @@
 import { Notification } from "../models/notification.model";
 import * as notificationType from "../services/events/types/notification.type";
 import { Logger } from "../utils/logger";
+
 export const saveUserInviteRequest = async (data: notificationType.UserInviteRequestEvent) => {
   try {
     const notificationData = {
@@ -22,7 +23,6 @@ export const saveUserInviteRequest = async (data: notificationType.UserInviteReq
     }
 
     await Notification.create(notificationData);
-    Logger.info('[Repository]사용자 초대 요청 로그 저장 성공', { data :notificationData });
   } catch(err) {
     Logger.error('[Repository]사용자 초대 요청 로그 저장 실패', { err, data });
   }
@@ -59,11 +59,31 @@ export const saveUserInviteResponse = async (data: notificationType.UserInviteRe
   }
 }
 
+export const saveUserMention = async (data: notificationType.UserMentionEvent) => {
+  try {
+    const notificationData = {
+      topic : data.topic,
+      doc_id : data.payload.doc_id,
+      sender_id : data.payload.sender_id,
+      receiver_id : data.payload.receiver_id,
+      content : data.payload.content,
+      title : data.payload.title,
+      alarm_type : data.payload.alarm_type,
+      is_read : data.payload.is_read,
+      target_type : data.payload.target_type,
+      target_id : data.payload.target_id,
+      timestamp : data.payload.timestamp,
+    }
+    await Notification.create(notificationData);
+  } catch(err) {
+    Logger.error('[Repository]사용자 언급 로그 저장 실패', { err, data });
+  }
+}
 
 export const updateNotificationRead = async (data: notificationType.NotificationReadEvent) => {
   try {
     await Notification.updateOne({doc_id: data.payload.doc_id}, {is_read : true});
-    Logger.info('[Repository]알림 읽음 처리 성공', { data });
+
   } catch(err) {
     Logger.error('[Repository]알림 읽음 처리 실패', { err, data });
   }

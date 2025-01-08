@@ -57,3 +57,20 @@ export interface NotificationReadEvent extends NotificationEvent {
   }
 }
 
+
+
+export interface UserMentionEvent extends NotificationEvent {
+  topic: string;
+  payload: {
+    doc_id : string;
+    sender_id : number;
+    receiver_id : number;
+    title : string;
+    content : string;
+    alarm_type : string;
+    is_read? : boolean;
+    target_type : string;
+    target_id : number;
+    timestamp? : string;
+  }
+}

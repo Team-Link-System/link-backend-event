@@ -30,7 +30,6 @@ export const handleUserInviteRequest = async (data: notificationType.UserInviteR
     }
 
     await notificationRepository.saveUserInviteRequest(notificationData);
-    Logger.info('사용자 초대 요청 로그 저장 성공', {  data });
   } catch(err) {
     Logger.error('사용자 초대 요청 로그 저장 실패', { err,  data });
   }
@@ -65,7 +64,6 @@ export const handleUserInviteResponse = async (data: notificationType.UserInvite
     }
 
     await notificationRepository.saveUserInviteResponse(notificationData);
-    Logger.info('사용자 초대 응답 로그 저장 성공', { data });
   } catch(err) {
     Logger.error('사용자 초대 응답 로그 저장 실패', { err, data });
   }
@@ -74,8 +72,15 @@ export const handleUserInviteResponse = async (data: notificationType.UserInvite
 export const handleNotificationRead = async (data: notificationType.NotificationReadEvent) => {
   try {
     await notificationRepository.updateNotificationRead(data);
-    Logger.info('알림 읽음 처리 성공', { data });
   } catch(err) {
     Logger.error('알림 읽음 처리 실패', { err, data });
+  }
+}
+
+export const handleUserMention = async (data: notificationType.UserMentionEvent) => {
+  try {
+    await notificationRepository.saveUserMention(data);
+  } catch(err) {
+    Logger.error('사용자 언급 로그 저장 실패', { err, data });
   }
 }
