@@ -5,7 +5,7 @@ const envFile = process.env.NODE_ENV === 'production' ? '.env' : '.env.dev';
 dotenv.config({ path: path.join(__dirname, `../${envFile}`) });
 
 import { initConfig, shutdown } from './config';
-import { startApp } from './app';
+
 import { Logger } from './utils/logger';
 import { startSubscription } from './config/nats';
 
@@ -13,9 +13,7 @@ import { startSubscription } from './config/nats';
 
 const startServer = async () => {
   try {
-    
     await initConfig();
-    await startApp();
     await startSubscription();
 
     // Graceful shutdown 처리
