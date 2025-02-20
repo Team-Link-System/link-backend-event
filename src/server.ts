@@ -13,9 +13,10 @@ import { initCron } from './utils/cron';
 
 const startServer = async () => {
   try {
+    initCron();
     await initConfig();
     await startSubscription();
-    initCron();
+    
     // Graceful shutdown 처리
     process.on('SIGTERM', async () => {
       Logger.info('SIGTERM signal received.');

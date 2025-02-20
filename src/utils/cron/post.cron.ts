@@ -12,7 +12,7 @@ export function scheduleViewCountSync() {
       const keys = await redis.keys("post:views:*");
 
       if (keys.length === 0) {
-        Logger.info("⏳ 업데이트할 조회수 없음");
+        Logger.info("업데이트할 조회수 없음");
         return;
       }
 
@@ -44,7 +44,7 @@ export function scheduleViewCountSync() {
         await client.query("ROLLBACK"); // 오류 발생 시 롤백
         Logger.error("조회수 동기화 실패 (롤백됨):", error);
       } finally {
-        client.release(); // ✅ 커넥션 반환
+        client.release(); // 커넥션 반환
       }
     } catch (error) {
       Logger.error("조회수 동기화 실패:", error);

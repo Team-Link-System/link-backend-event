@@ -1,8 +1,7 @@
-// 크론 작업 모음
-
 import { scheduleViewCountSync } from "./post.cron";
 
 export const initCron = () => {
-    scheduleViewCountSync();
+  console.log("Cron 작업 초기화 중...");
+  scheduleViewCountSync();
 }
 
