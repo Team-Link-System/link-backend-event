@@ -8,14 +8,14 @@ import { initConfig, shutdown } from './config';
 
 import { Logger } from './utils/logger';
 import { startSubscription } from './config/nats';
-
+import { initCron } from './utils/cron';
 
 
 const startServer = async () => {
   try {
     await initConfig();
     await startSubscription();
-
+    initCron();
     // Graceful shutdown 처리
     process.on('SIGTERM', async () => {
       Logger.info('SIGTERM signal received.');
