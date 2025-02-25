@@ -1,21 +1,26 @@
 import { Logger } from "../../../utils/logger";
-import * as auditRepository from "../../../repositories/audit.repository";
+import * as reportRepository from "../../../repositories/report.repository";
 import * as reportType from "../types/report.type";
 import { publishEvent } from "../../../config/nats";
 
 export const handleReportCreate = async (data: reportType.CreateReportEvent) => {
   try {
-    await auditRepository.saveReportAudit(data);
 
-    const { reporter_id, target_id, title, content, report_files, timestamp } = data.payload;
-
-    const auditEvent = {
-      topic : "audit.report.create",
-      payload : { reporter_id, target_id, title, content, report_files, timestamp },
-      action : "report",
-      message : `${reporter_id}님이 ${target_id}님을 신고하셨습니다.`
+    const reportData : reportType.CreateReportEvent = {
+      topic : data.topic,
+      payload : {
+        reporter_id : data.payload.reporter_id,
+        target_id : data.payload.target_id,
+        title : data.payload.title,
+        content : data.payload.content,
+        report_type : data.payload.report_type,
+        report_files : data.payload.report_files,
+        timestamp : data.payload.timestamp,
+      }
     }
-    await publishEvent(auditEvent.topic, auditEvent);
+
+    await reportRepository.saveReport(reportData);
+
   } catch(err) {
     Logger.error('신고 저장 실패', { err,  data });
   }

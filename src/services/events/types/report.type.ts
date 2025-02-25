@@ -10,7 +10,7 @@ export interface ReportPayload {
   title: string;
   content: string;
   report_type: string;
-  report_files: string[];
+  report_files?: string[];
   timestamp: string;
 }
 
@@ -18,4 +18,3 @@ export interface CreateReportEvent extends ReportEvent {
   topic: string;
   payload: ReportPayload;
 }
-
