@@ -94,7 +94,7 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
                 (COALESCE(SUM(p.views), 0) * 1) + 
                 (COALESCE(COUNT(DISTINCT l.id), 0) * 5) + 
                 (COALESCE(COUNT(DISTINCT c.id), 0) * 10) AS score,
-                RANK() OVER (ORDER BY (COALESCE(SUM(p.views), 0) * 1) + 
+                ROW_NUMBER() OVER (ORDER BY (COALESCE(SUM(p.views), 0) * 1) + 
                                           (COALESCE(COUNT(DISTINCT l.id), 0) * 5) + 
                                           (COALESCE(COUNT(DISTINCT c.id), 0) * 10) DESC) AS rank
               FROM posts p
@@ -156,6 +156,6 @@ export function schedulePostStatWeekly() {
 }
 
 export function schedulePostStatMonthly() {
-  // new Cron("0 0 0 1 * *", () => generatePostStats("month", subMonths, "1 month")); // 매월 1일 0시 0분 실행
+  new Cron("0 0 0 1 * *", () => generatePostStats("month", subMonths, "1 month")); // 매월 1일 0시 0분 실행
   // new Cron("* * * * * *", () => generatePostStats("month", subMonths, "1 month")); // 테스트
 }
