@@ -130,7 +130,6 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
             score: row.score,
           }));
 
-          // TODO 주간 게시물은 startDate 없음
           await PostStats.updateOne(
             {  period, visibility },
             { 
