@@ -18,6 +18,8 @@ export interface UserInviteRequestPayload {
   company_name? : string;
   department_id? : number;
   department_name? : string;
+  target_type? : string;
+  target_id? : string | number;
   timestamp? : string;
 }
 
@@ -29,7 +31,7 @@ export interface UserInviteRequestEvent extends NotificationEvent {
 export interface UserInviteResponsePayload {
   doc_id : string;
   target_doc_id : string;
-  target_id : string;
+  target_id?: string | number;
   sender_id : number;
   receiver_id : number;
   title : string;
@@ -42,6 +44,7 @@ export interface UserInviteResponsePayload {
   company_name? : string;
   department_id? : number;
   department_name? : string;
+  target_type? : string;
   timestamp? : string;
 }
 

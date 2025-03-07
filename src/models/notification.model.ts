@@ -17,7 +17,7 @@ const notificationSchema = new mongoose.Schema({
   department_id : { type: Number, required: false},
   department_name : { type: String, required: false},
   target_type : { type: String, required: false},
-  target_id : { type: Number, required: false},
+  target_id : { type: mongoose.Schema.Types.Mixed, required: false}, // Number 혹은 String
   timestamp : { type: Date, default: Date.now},
   created_at : { type: Date, default: Date.now},
   updated_at : { type: Date, default: null},
