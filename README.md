@@ -1,6 +1,6 @@
 # Event Processing Service
 
-이벤트 처리 시스템은 다양한 토픽에 대한 이벤트를 수신하고 처리하며, MongoDB에 저장하는 서비스입니다.
+이벤트 처리 시스템은 다양한 토픽에 대한 이벤트를 수신하고 처리하며, MongoDB, PostgreSQL에 저장하는 서비스입니다.
 
 ## 기술 스택
 
@@ -8,6 +8,9 @@
 - TypeScript
 - Express
 - MongoDB
+- PostgreSQL
+- NATS (메시지 브로커)
+- Redis
 - PM2
 - Docker
 
@@ -81,9 +84,19 @@ npm run deploy
 | PORT | 서버 포트 |
 | MONGO_URI | MongoDB 연결 문자열 |
 | NATS_URI | NATS 연결 문자열 |
+| NATS_JETSTREAM_MAX_AGE | NATS Jetstream 최대 보관 기간 |
+| NATS_JETSTREAM_MAX_BYTES | NATS Jetstream 최대 데이터 크기 |
+| NATS_JETSTREAM_MAX_MESSAGES | NATS Jetstream 최대 메시지 수 |
 | REDIS_HOST | Redis 호스트 |
 | REDIS_PORT | Redis 포트 |
 | REDIS_PASSWORD | Redis 비밀번호 |
+| POSTGRES_URI | PostgreSQL 연결 문자열 |
+| POSTGRES_DB_HOST | PostgreSQL 호스트 |
+| POSTGRES_SSL | PostgreSQL SSL 사용 여부 |
+| POSTGRES_USER | PostgreSQL 사용자 |
+| POSTGRES_PASSWORD | PostgreSQL 비밀번호 |
+| POSTGRES_DB | PostgreSQL 데이터베이스 이름 |
+| POSTGRES_PORT | PostgreSQL 포트 |
 
 ## 개발 가이드
 
@@ -98,7 +111,9 @@ event-processing-service/
 │   │   └── usecases/
 │   ├── infrastructure/
 │   │   ├── mongodb/
-│   │   └── nats/
+│   │   ├── postgres/
+│   │   ├── nats/
+│   │   └── redis/
 │   ├── presentation/
 │   │   └── controllers/
 │   └── server.ts
@@ -133,8 +148,10 @@ docker logs <container-id>
 일반적인 문제 해결:
 
 1. **MongoDB 연결 실패**: MONGO_URI 환경 변수가 올바르게 설정되어 있는지 확인하세요.
-2. **서비스가 시작되지 않음**: 로그를 확인하여 오류 메시지를 파악하세요.
-3. **이벤트가 처리되지 않음**: NATS 연결 상태와 토픽 구독이 올바르게 설정되었는지 확인하세요.
+2. **PostgreSQL 연결 실패**: POSTGRES_URI 또는 관련 환경 변수가 올바르게 설정되어 있는지 확인하세요.
+3. **NATS 연결 실패**: NATS_URI 환경 변수가 올바른지 확인하고 NATS 서버가 실행 중인지 확인하세요.
+4. **서비스가 시작되지 않음**: 로그를 확인하여 오류 메시지를 파악하세요.
+5. **이벤트가 처리되지 않음**: NATS 연결 상태와 토픽 구독이 올바르게 설정되었는지 확인하세요.
 
 ## 이미지 사용 방법
 
@@ -149,6 +166,7 @@ docker run -d \
   -p 9000:9000 \
   -e MONGO_URI=<mongodb-connection-string> \
   -e NATS_URI=<nats-connection-string> \
+  -e POSTGRES_URI=<postgres-connection-string> \
   -e REDIS_HOST=<redis-host> \
   -e REDIS_PORT=<redis-port> \
   -e REDIS_PASSWORD=<redis-password> \
@@ -162,6 +180,4 @@ docker run -d \
 
 - 포트: 9000
 - 필요한 환경 변수는 쿠버네티스 ConfigMap이나 Secret으로 제공해야 함
-
----
 
