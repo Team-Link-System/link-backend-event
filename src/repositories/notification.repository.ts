@@ -18,10 +18,12 @@ export const saveUserInviteRequest = async (data: notificationType.UserInviteReq
       company_name : data.payload.company_name,
       department_id : data.payload.department_id,
       department_name : data.payload.department_name,
+      target_type : data.payload.target_type,
+      target_id : data.payload.target_id,
       is_read : data.payload.is_read,
       timestamp : data.payload.timestamp,
     }
-
+    console.log("notificationData",notificationData.target_id);
     await Notification.create(notificationData);
   } catch(err) {
     Logger.error('[Repository]사용자 초대 요청 로그 저장 실패', { err, data });
@@ -30,6 +32,8 @@ export const saveUserInviteRequest = async (data: notificationType.UserInviteReq
 
 export const saveUserInviteResponse = async (data: notificationType.UserInviteResponseEvent) => {
   try {
+
+    console.log("target_id",data.payload.target_id);
 
     const notificationData = {
       doc_id : data.payload.doc_id,
@@ -46,6 +50,8 @@ export const saveUserInviteResponse = async (data: notificationType.UserInviteRe
       company_name : data.payload.company_name,
       department_id : data.payload.department_id,
       department_name : data.payload.department_name,
+      target_type : data.payload.target_type,
+      target_id : data.payload.target_id,
       is_read : data.payload.is_read,
       timestamp : data.payload.timestamp,
     }

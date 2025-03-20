@@ -64,9 +64,9 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
     const client = await db.connect();
     try {
       const visibilityTypes = ["public", "company", "department"];
-      const startDate = period === "week" 
-        ? format(dateFunc(new Date(), 1), "yyyy-MM-dd") 
-        : format(dateFunc(new Date(), 1), "yyyy-MM-01"); // 월간은 무조건 1일
+      // const startDate = period === "week" 
+      //   ? format(dateFunc(new Date(), 1), "yyyy-MM-dd") 
+      //   : format(dateFunc(new Date(), 1), "yyyy-MM-01"); // 월간은 무조건 1일
 
       const TOP_POSTS_LIMIT = 50;
       const sqlPeriod = period === "week" ? "week" : "month"; // `DATE_TRUNC()`에 사용될 기간
@@ -88,13 +88,13 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
                 p.is_anonymous,
                 p.created_at,
                 p.updated_at,
-                COALESCE(SUM(p.views), 0) AS total_views,
+                p.views AS total_views,
                 COALESCE(COUNT(DISTINCT l.id), 0) AS total_likes,
                 COALESCE(COUNT(DISTINCT c.id), 0) AS total_comments,
                 (COALESCE(SUM(p.views), 0) * 1) + 
                 (COALESCE(COUNT(DISTINCT l.id), 0) * 5) + 
                 (COALESCE(COUNT(DISTINCT c.id), 0) * 10) AS score,
-                RANK() OVER (ORDER BY (COALESCE(SUM(p.views), 0) * 1) + 
+                ROW_NUMBER() OVER (ORDER BY (COALESCE(SUM(p.views), 0) * 1) + 
                                           (COALESCE(COUNT(DISTINCT l.id), 0) * 5) + 
                                           (COALESCE(COUNT(DISTINCT c.id), 0) * 10) DESC) AS rank
               FROM posts p
@@ -130,11 +130,10 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
             score: row.score,
           }));
 
-      
           await PostStats.updateOne(
-            { startDate, period, visibility },
+            {  period, visibility },
             { 
-              $set: { startDate, period, visibility, posts },
+              $set: { period, visibility, posts },
               $setOnInsert: { createdAt: new Date() } 
             },
             { upsert: true }
@@ -153,9 +152,10 @@ async function generatePostStats(period: "week" | "month", dateFunc: Function, i
 
 export function schedulePostStatWeekly() {
   new Cron("0 0 0 * * 1", () => generatePostStats("week", subWeeks, "7 days")); // 매주 월요일 0시 0분 실행
+  // new Cron("* * * * * *", () => generatePostStats("week", subWeeks, "7 days")); // 테스트
 }
 
 export function schedulePostStatMonthly() {
-  // new Cron("0 0 0 1 * *", () => generatePostStats("month", subMonths, "1 month")); // 매월 1일 0시 0분 실행
+  new Cron("0 0 0 1 * *", () => generatePostStats("month", subMonths, "1 month")); // 매월 1일 0시 0분 실행
   // new Cron("* * * * * *", () => generatePostStats("month", subMonths, "1 month")); // 테스트
 }

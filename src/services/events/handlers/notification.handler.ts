@@ -15,6 +15,8 @@ export const handleUserInviteRequest = async (data: notificationType.UserInviteR
         title : data.payload.title,
         alarm_type : data.payload.alarm_type,
         invite_type : data.payload.invite_type,
+        target_type : data.payload.target_type,
+        target_id : data.payload.target_id,
         status : data.payload.status,
         is_read : data.payload.is_read,
         timestamp : data.payload.timestamp,
@@ -42,6 +44,7 @@ export const handleUserInviteResponse = async (data: notificationType.UserInvite
       payload : {
         doc_id : data.payload.doc_id,
         target_doc_id : data.payload.target_doc_id,
+        target_type : data.payload.target_type,
         target_id : data.payload.target_id,
         sender_id : data.payload.sender_id,
         receiver_id : data.payload.receiver_id,
