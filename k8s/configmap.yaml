@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: link-backend-event-config
-data:
-  mongodb_uri: mongodb://mongodb-service:27017/link
