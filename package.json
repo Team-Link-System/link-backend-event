@@ -10,8 +10,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "docker:build": "docker build -t your-docker-registry/link-backend-event:latest .",
-    "docker:push": "docker push your-docker-registry/link-backend-event:latest",
+    "docker:build": "docker build -f Dockerfile -t harbor.jongjong2.site:30443/link-event:latest .",
+    "docker:build:dev": "docker build -f Dockerfile.dev -t harbor.jongjong2.site:30443/link-event:dev .",
+    "docker:push": "docker push harbor.jongjong2.site:30443/link-event:latest",
+    "docker:push:dev": "docker push harbor.jongjong2.site:30443/link-event:dev",
+    "deploy:dev": "npm run build && npm run docker:build:dev && npm run docker:push:dev",
     "deploy": "npm run build && npm run docker:build && npm run docker:push"
   },
   "keywords": [],
