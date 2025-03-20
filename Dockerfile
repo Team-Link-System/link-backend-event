@@ -1,32 +1,23 @@
-# 빌드 스테이지
-FROM node:18-alpine as builder
-
-WORKDIR /app
-
-# 패키지 파일 복사 및 설치
-COPY package*.json ./
-RUN npm install
-
-# 소스 복사 및 빌드
-COPY . .
-RUN npm run build
-
-# 실행 스테이지
-FROM node:18-alpine
-
-WORKDIR /app
-
-# 프로덕션 의존성만 설치
-COPY package*.json ./
-RUN npm install --only=production
-
-# 빌드된 파일 복사
-COPY --from=builder /app/dist ./dist
-
-# 환경 변수 설정
+FROM node:lts-alpine
 ENV NODE_ENV=production
-ENV PORT=3000
 
-EXPOSE 3000
+RUN apk update
+RUN apk add --no-cache bash curl
 
-CMD ["node", "dist/index.js"] 
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm i -g npm --force
+RUN npm i -g pm2
+RUN npm i --omit=dev
+
+# 빌드된 파일들만 복사
+COPY dist/ ./dist/
+
+# PM2 설정 파일 복사 (필요한 경우)
+COPY ecosystem.config.js ./
+
+EXPOSE 9000
+
+# PM2로 실행
+ENTRYPOINT ["pm2-runtime", "ecosystem.config.js"]
