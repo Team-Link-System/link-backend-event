@@ -1,3 +1,4 @@
+dist/.git
 node_modules
 npm-debug.log
 .git
@@ -6,3 +7,4 @@ npm-debug.log
 *.md
 .DS_Store
 tests 
+README.md
