@@ -2,7 +2,7 @@ import { handleUserSignIn } from "./user.handler";
 import { handleChatMessage } from "./chat.handler";
 import * as notificationHandler from "./notification.handler";
 import { handleReportCreate } from "./report.handler";
-
+import { handleKanBanBoardStateUpdate, handleKanBanBoardUserJoin, handleKanBanBoardUserLeave } from "./kanbanboard.handler";
 export const handlers: Record<string, (data: any) => Promise<void>> = {
   "link.event.user.signin" : handleUserSignIn,
   // "link.event.user.signup" : handleUserSignup,
@@ -17,7 +17,10 @@ export const handlers: Record<string, (data: any) => Promise<void>> = {
   
   // "link.event.user.mention" : handleUserMention, // 언급
 
-  
+  //TODO 칸반보드 관련
+  "link.event.board.state.update" : handleKanBanBoardStateUpdate,
+  "link.event.board.user.joined" : handleKanBanBoardUserJoin,
+  "link.event.board.user.left" : handleKanBanBoardUserLeave,
 
   //TODO 채팅 관련
   "link.event.chat.message" : handleChatMessage,
