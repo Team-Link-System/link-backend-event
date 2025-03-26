@@ -9,6 +9,16 @@ export const saveUserSignInAudit = async (data: any) => {
   await Audit.create(auditData);
 }
 
+export const saveKanBanBoardAudit = async (data: any) => {
+  const auditData = {
+    topic : data.topic,
+    message : data.message,
+    payload : data.payload,
+  }
+  
+  await Audit.create(auditData);
+}
+
 //TODO 출퇴근 시간 기록
 export const saveUserAttendanceAudit = async (data: any) => {
   const auditData = {
