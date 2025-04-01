@@ -25,9 +25,12 @@ export function scheduleViewCountSync() {
 
           if (views) {
             const result = await client.query(
-              "UPDATE posts SET views = views + $1 WHERE id = $2 RETURNING views",
+              "UPDATE posts SET views = views + $1 WHERE id = $2",
               [parseInt(views, 10), postId]
             );
+
+            // 업데이트된 조회수 로깅 추가
+            Logger.info(`Post ${postId} views updated to: ${result.rows[0].views}`);
 
             multi.del(key); // PostgreSQL 반영 후 Redis에서 삭제
           }
