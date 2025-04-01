@@ -8,7 +8,7 @@ import PostStats from "../../models/poststat.model";
 export function scheduleViewCountSync() {
   new Cron("*/5 * * * *", async () => { // 5분마다 실행
     try {
-      const keys = await redis.keys("post:views:*");
+      const keys = await redis.keys("post:views:diff:*");
 
       if (keys.length === 0) {
         return;
@@ -17,11 +17,10 @@ export function scheduleViewCountSync() {
       const client = await db.connect();
       try {
         await client.query("BEGIN");
-
         const multi = redis.multi(); // redis 트랜잭션
 
         for (const key of keys) {
-          const postId = key.split(":")[2]; // post:views:123 → 123
+          const postId = key.split(":")[3]; // post:views:123 → 123
           const views = await redis.get(key);
 
           if (views) {
